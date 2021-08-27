@@ -1,6 +1,6 @@
 function random_nyan()
 {
-    flag=$(($RANDOM % 3))
+    flag=$(($RANDOM % 5))
     if [ $flag -eq 0 ]; then
         nyancat -f 3 -s -n
     fi
@@ -8,15 +8,18 @@ function random_nyan()
 
 function cd()
 {
-    if [ $1 == "--" ]; then
+    if [ "$1" == "--" ]; then
         pushd +1 > /dev/null
         random_nyan
-    elif [ $1 ]; then
+    elif [ "$1" ]; then
         pushd $1 > /dev/null
         random_nyan
     else
+        echo "hoge"
         pushd ~/ > /dev/null
+        echo "huga"
         random_nyan
+        echo "foo"
     fi
 }
 
