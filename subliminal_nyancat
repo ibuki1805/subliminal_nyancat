@@ -15,11 +15,8 @@ function cd()
         pushd $1 > /dev/null
         random_nyan
     else
-        echo "hoge"
         pushd ~/ > /dev/null
-        echo "huga"
         random_nyan
-        echo "foo"
     fi
 }
 
