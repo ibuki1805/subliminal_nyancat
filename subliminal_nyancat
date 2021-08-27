@@ -1,0 +1,32 @@
+function random_nyan()
+{
+    flag=$(($RANDOM % 3))
+    if [ $flag -eq 0 ]; then
+        nyancat -f 3 -s -n
+    fi
+}
+
+function cd()
+{
+    if [ $1 == "--" ]; then
+        pushd +1 > /dev/null
+        random_nyan
+    elif [ $1 ]; then
+        pushd $1 > /dev/null
+        random_nyan
+    else
+        pushd ~/ > /dev/null
+        random_nyan
+    fi
+}
+
+function ds()
+{
+    dirs -v
+}
+
+function ls()
+{
+    random_nyan
+    dir $@
+}
