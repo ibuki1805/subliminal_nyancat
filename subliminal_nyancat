@@ -2,7 +2,7 @@ function random_nyan()
 {
     flag=$(($RANDOM % 5))
     if [ $flag -eq 0 ]; then
-        nyancat -f 3 -s -n
+        nyancat -f 5 -s -n
     fi
 }
 
